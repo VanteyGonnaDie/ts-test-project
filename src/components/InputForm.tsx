@@ -3,11 +3,16 @@ import AppButton from './UI/Button/AppButton'
 import AppInput from './UI/Input/AppInput'
 
 const InputForm = () => {
+
+    const addNewNote = (e) =>{
+        e.preventDefault()
+    }
+
   return (
-    <div className='input-form'>
+    <form className='input-form'>
         <AppInput/>
         <AppButton/>
-    </div>
+    </form>
   )
 }
 
