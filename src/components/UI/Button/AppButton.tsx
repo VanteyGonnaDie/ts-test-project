@@ -2,7 +2,9 @@ import React from 'react'
 
 const AppButton = () => {
   return (
-    <div>AppButton</div>
+    <div>
+        <button type="submit">Добавить заметку</button>
+    </div>
   )
 }
 

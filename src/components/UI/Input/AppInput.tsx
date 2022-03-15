@@ -2,7 +2,9 @@ import React from 'react'
 
 const AppInput = () => {
   return (
-    <div>AppInput</div>
+    <div>
+        <input placeholder='Введите текст заметки' type="text" />
+    </div>
   )
 }
 
