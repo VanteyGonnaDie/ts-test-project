@@ -14,6 +14,10 @@ export const notesList = createModel<RootModel>()({
     reducers: {
         addNote(state, payload){
         return [...state, payload]
+        },
+        deleteNote(state){
+            state.pop()
+            return [...state]
         }
     },
 },)

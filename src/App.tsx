@@ -12,13 +12,16 @@ import { notesList } from './models/notes';
 const App = () => {
   const  notes = useSelector((state: RootState) => state.notesList)
   const {dispatch} = store
-
+  const deleteNote = () =>{
+    dispatch.notesList.deleteNote()
+  }
 
 
   return (
       <div>
         <InputForm/>
         <NoteList/>
+        <button onClick={deleteNote}>delete last</button>
       </div>
       
       )
