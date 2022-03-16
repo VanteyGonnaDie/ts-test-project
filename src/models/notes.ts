@@ -1,33 +1,22 @@
 import { createModel } from "@rematch/core"
 import { RootModel } from "."
 
+// export interface NoteModel {
+//     text: string
+// }
 
-export interface Note {
-    id: number
-    content: string
-}
+// type NoteState = {
+//     notes: NoteModel[]
+// }
 
-type NoteState ={
-    notes: Note[]
-}
-
-
-export const notes = createModel<RootModel>()({
-    state: {
-        notes: [{id:0, content:''}],
-    } as NoteState,
-    reducers:{
-        setNotes(state, notes){
-            return {
-                ...state,
-                notes,
-            }
-        },
-    },
-    effects: (dispatch) => {
-        const { notes } = dispatch
-        return{
-            
+export const notesList = createModel<RootModel>()({
+    state: [''],
+    reducers: {
+        addNote(state, payload){
+        return [...state, payload]
         }
-    }
-})
+    },
+},)
+
+
+
