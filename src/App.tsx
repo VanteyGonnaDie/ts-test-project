@@ -23,7 +23,7 @@ const App = () => {
     }
     if(event.ctrlKey && event.key == 'y'){
       event.preventDefault();
-      dispatch.notesList.addNote(notes.slice(-1)[0])
+      dispatch.notesList.addNote(notes[notes.length - 1])
       console.log('pressed ctrl+y')
       console.log(notes)
     }
