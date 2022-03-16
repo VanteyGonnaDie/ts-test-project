@@ -8,10 +8,10 @@ const NoteList = () => {
 
 
   return (
-    <div>
-        <div style={{display: 'flex'}}>
-            <div>№</div>
-            <div>Заметка</div>
+    <div className='note-list__wrapper'>
+        <div className='note-row'>
+            <p className='note-num'>№</p>
+            <p className='note-text'>Заметка</p>
         </div>
         {notes.map((text,index)=>
           <NoteItem key={index} text={text} number={index+1}/>

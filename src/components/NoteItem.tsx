@@ -2,10 +2,10 @@ import React from 'react'
 
 const NoteItem = (props) => {
   return (
-    <div>
-        <p>{props.number}</p>
-        <p>{props.text}</p>
-        {console.log(props)}
+    <div className='note-row'>
+        <p className='note-num'>{props.number}</p>
+        <p className='note-text'>{props.text}</p>
+        {/* {console.log(props)} */}
     </div>
   )
 }

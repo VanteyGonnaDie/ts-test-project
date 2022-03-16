@@ -15,22 +15,22 @@ const InputForm = () => {
     
         const handleChange = event => {
             state.text  = event.target.value
-            console.log(state.text)
-            console.log(state)
+            // console.log(state.text)
+            // console.log(state)
           }
 
         const handleSubmit = event => {
             event.preventDefault();
-            console.log(state)
-            console.log(state.text)
-            dispatch.notesList.addNote(state.text) 
-            console.log(state)
-            console.log(store.getState());
+            // console.log(state)
+            // console.log(state.text)
+            dispatch.notesList.addNote(state.text);
+            // console.log(state)
+            // console.log(store.getState());
             (document.getElementById('MainInput') as HTMLInputElement).value = '';
+            console.log(notes)
             
             
         }
-    console.log(state)
     
   return (
     <form className='input-form' onSubmit={handleSubmit}>
