@@ -15,10 +15,26 @@ const App = () => {
   const deleteNote = () =>{
     dispatch.notesList.deleteNote()
   }
+  const handleKeyEvent = (event: React.KeyboardEvent) => {
+    if(event.ctrlKey && event.key == 'z'){
+      event.preventDefault();
+      dispatch.notesList.deleteNote()
+      console.log(notes)
+    }
+    if(event.ctrlKey && event.key == 'y'){
+      event.preventDefault();
+      dispatch.notesList.addNote(notes.slice(-1)[0])
+      console.log('pressed ctrl+y')
+      console.log(notes)
+    }
+  }
+  // const log = (e: KeyboardEvent): void => {
+  //   console.log(e.key);
+  // }
 
 
   return (
-      <div>
+      <div onKeyDown={handleKeyEvent}>
         <InputForm/>
         <NoteList/>
         <button onClick={deleteNote}>delete last</button>
