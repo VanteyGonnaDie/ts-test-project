@@ -10,7 +10,7 @@ import { RootModel } from "."
 // }
 
 export const notesList = createModel<RootModel>()({
-    state: [''],
+    state: ['Первая заметка'],
     reducers: {
         addNote(state, payload){
         return [...state, payload]

@@ -18,12 +18,7 @@ const App = () => {
   return (
       <div>
         <InputForm/>
-        <p>
-          {notesList.state}
-        </p>
-        {notes.map((text,index)=>
-          <p key={index} >{text}</p>
-          )}
+        <NoteList/>
       </div>
       
       )
