@@ -30,8 +30,8 @@ const InputForm = () => {
     
   return (
     <form className='input-form' onSubmit={handleSubmit}>
-        <input type="text"  onChange={handleChange} />
-        <button type='submit'>send</button>
+        <input placeholder='Введите заметку' type="text"  onChange={handleChange} />
+        <button type='submit'>Добавить заметку</button>
     </form>
   )
 }

@@ -13,24 +13,17 @@ const App = () => {
   const  notes = useSelector((state: RootState) => state.notesList)
   const {dispatch} = store
 
-  const addNoteBtn = (event) => {
-    event.preventDefault()
-    dispatch.notesList.addNote(1)    
-    console.log(store.getState())
-    console.log(notesList.state)
-  }
 
 
   return (
-      <div>example
+      <div>
+        <InputForm/>
         <p>
           {notesList.state}
         </p>
         {notes.map((text,index)=>
           <p key={index} >{text}</p>
           )}
-      <button onClick={addNoteBtn}>+1</button>
-      <InputForm/>
       </div>
       
       )

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AppInput = () => {
+const AppInput = (props) => {
   return (
     <div>
-        <input placeholder='Введите текст заметки' type="text" />
+        <input {...props} placeholder='Введите текст заметки' type="number" />
     </div>
   )
 }

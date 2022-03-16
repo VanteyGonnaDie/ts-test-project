@@ -1,8 +1,11 @@
 import React from 'react'
 
-const NoteItem = () => {
+const NoteItem = (props) => {
   return (
-    <div>NoteItem</div>
+    <div>
+        <p>{props.id}</p>
+        <p>{props.text}</p>
+    </div>
   )
 }
 
