@@ -12,8 +12,15 @@ import { notesList } from './models/notes';
 const App = () => {
   const  notes = useSelector((state: RootState) => state.notesList)
   const {dispatch} = store
+  const [devMenu, setDevMenu] = useState(false)
   const deleteNote = () =>{
     dispatch.notesList.deleteNote()
+  }
+  const addStaticNote = () =>{
+    dispatch.notesList.addNote('Тестовая заметка')
+  }
+  const addLastNote = () =>{
+    dispatch.notesList.addNote(notes[notes.length - 1])
   }
   const handleKeyEvent = (event: React.KeyboardEvent) => {
     if(event.ctrlKey && event.key == 'z'){
@@ -37,8 +44,19 @@ const App = () => {
       <div className='container-fluid' onKeyDown={handleKeyEvent}>
         <InputForm/>
         <NoteList/>
-        <button onClick={deleteNote}>delete last</button>
+
+        <div className='dev-menu_wrapper'>
+          <button className='btn btn-primary' onClick={()=> {setDevMenu(!devMenu)}}>Тестовая среда</button>
+          {devMenu && 
+            <div className='dev-menu__btns'>
+            <button className='btn btn-secondary' onClick={addLastNote}>Добавить последнюю заметку</button>
+            <button className='btn btn-secondary' onClick={addStaticNote}>Добавить тестовую заметку</button>
+            <button className='btn btn-secondary' onClick={deleteNote}>Удалить последнюю заметку</button>
+          </div>
+           }
+        </div>
       </div>
+
       
       )
     }
