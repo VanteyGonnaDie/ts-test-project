@@ -34,8 +34,8 @@ const InputForm = () => {
     
   return (
     <form className='input-form' onSubmit={handleSubmit}>
-        <input id='MainInput' placeholder='Введите заметку' type="text"  onChange={handleChange} />
-        <button type='submit'>Добавить заметку</button>
+        <input className='form-control' id='MainInput' placeholder='Введите заметку' type="text"  onChange={handleChange} />
+        <button className='btn btn-outline-primary btn-sm' type='submit'>Добавить заметку</button>
     </form>
   )
 }

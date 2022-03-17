@@ -34,7 +34,7 @@ const App = () => {
 
 
   return (
-      <div onKeyDown={handleKeyEvent}>
+      <div className='container-fluid' onKeyDown={handleKeyEvent}>
         <InputForm/>
         <NoteList/>
         <button onClick={deleteNote}>delete last</button>
