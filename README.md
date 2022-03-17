@@ -1,7 +1,9 @@
 # Тестовое задание Дубинин Иван
 
 Стек: TypeScript, rematch, Bootstrap, Sass
+
 Попробовать онлайн: https://codesandbox.io/s/peaceful-wave-ev2sps
+
 К заданию добавлена кнопка тестовой среды для отработки сценариев
 
 ## Установка проекта
