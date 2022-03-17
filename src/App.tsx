@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import InputForm from './components/InputForm';
 import NoteList from './components/NoteList';
 import './styles/custom.sass';
-import { useDispatch, useSelector, useStore } from 'react-redux'
-import { Dispatch, RootState, store } from './store';
-import AppButton from './components/UI/Button/AppButton';
-import NoteItem from './components/NoteItem';
-import { notesList } from './models/notes';
+import { useSelector } from 'react-redux'
+import { RootState, store } from './store';
 
 
 const App = () => {
@@ -35,24 +32,21 @@ const App = () => {
       console.log(notes)
     }
   }
-  // const log = (e: KeyboardEvent): void => {
-  //   console.log(e.key);
-  // }
+
 
 
   return (
       <div className='container-fluid' onKeyDown={handleKeyEvent}>
         <InputForm/>
         <NoteList/>
-
         <div className='dev-menu_wrapper'>
           <button className='btn btn-primary' onClick={()=> {setDevMenu(!devMenu)}}>Тестовая среда</button>
           {devMenu && 
             <div className='dev-menu__btns'>
-            <button className='btn btn-secondary' onClick={addLastNote}>Добавить последнюю заметку</button>
-            <button className='btn btn-secondary' onClick={addStaticNote}>Добавить тестовую заметку</button>
-            <button className='btn btn-secondary' onClick={deleteNote}>Удалить последнюю заметку</button>
-          </div>
+              <button className='btn btn-secondary' onClick={addLastNote}>Добавить последнюю заметку</button>
+              <button className='btn btn-secondary' onClick={addStaticNote}>Добавить тестовую заметку</button>
+              <button className='btn btn-secondary' onClick={deleteNote}>Удалить последнюю заметку</button>
+            </div>
            }
         </div>
       </div>

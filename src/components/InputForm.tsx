@@ -1,10 +1,7 @@
-import React, { useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { notesList } from '../models/notes'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { RootState, store } from '../store'
-// import { notes } from '../models/notes'
-import AppButton from './UI/Button/AppButton'
-import AppInput from './UI/Input/AppInput'
+
 
 
 

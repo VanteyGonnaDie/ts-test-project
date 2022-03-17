@@ -5,7 +5,6 @@ const NoteItem = (props) => {
     <div className='note-row'>
         <p className='note-num'>{props.number}</p>
         <p className='note-text'>{props.text}</p>
-        {/* {console.log(props)} */}
     </div>
   )
 }
