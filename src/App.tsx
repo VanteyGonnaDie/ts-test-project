@@ -36,7 +36,8 @@ const App = () => {
 
 
   return (
-      <div className='container-fluid' onKeyDown={handleKeyEvent}>
+      <div className='container-fluid' tabIndex={-1} onKeyDown={handleKeyEvent}>
+        <div className='app-wrapper'>
         <InputForm/>
         <NoteList/>
         <div className='dev-menu_wrapper'>
@@ -49,9 +50,8 @@ const App = () => {
             </div>
            }
         </div>
+        </div>
       </div>
-
-      
       )
     }
     
