@@ -7,25 +7,33 @@ import { RootState, store } from './store';
 
 
 const App = () => {
-  const  notes = useSelector((state: RootState) => state.notesList)
-  const {dispatch} = store
+
+  // Сбор state, reducers для дальнейшего использования в dev меню
+  const notes = useSelector((state: RootState) => state.notesList)
+  const { dispatch } = store
+
+  // Отслеживание состояния dev меню
   const [devMenu, setDevMenu] = useState(false)
-  const deleteNote = () =>{
+
+  // Функции для тестирования
+  const deleteNote = () => {
     dispatch.notesList.deleteNote()
   }
-  const addStaticNote = () =>{
+  const addStaticNote = () => {
     dispatch.notesList.addNote('Тестовая заметка')
   }
-  const addLastNote = () =>{
+  const addLastNote = () => {
     dispatch.notesList.addNote(notes[notes.length - 1])
   }
+
+  // Обработка нажатий на клавиатуре / Можно вынести отдельным компонентом
   const handleKeyEvent = (event: React.KeyboardEvent) => {
-    if(event.ctrlKey && event.key == 'z'){
+    if (event.ctrlKey && event.key == 'z') {
       event.preventDefault();
       dispatch.notesList.deleteNote()
       console.log(notes)
     }
-    if(event.ctrlKey && event.key == 'y'){
+    if (event.ctrlKey && event.key == 'y') {
       event.preventDefault();
       dispatch.notesList.addNote(notes[notes.length - 1])
       console.log('pressed ctrl+y')
@@ -36,23 +44,23 @@ const App = () => {
 
 
   return (
-      <div className='container-fluid' tabIndex={-1} onKeyDown={handleKeyEvent}>
-        <div className='app-wrapper'>
-        <InputForm/>
-        <NoteList/>
+    <div className='container-fluid' tabIndex={-1} onKeyDown={handleKeyEvent}>
+      <div className='app-wrapper'>
+        <InputForm />
+        <NoteList />
         <div className='dev-menu_wrapper'>
-          <button className='btn btn-primary' onClick={()=> {setDevMenu(!devMenu)}}>Тестовая среда</button>
-          {devMenu && 
+          <button className='btn btn-primary' onClick={() => { setDevMenu(!devMenu) }}>Тестовая среда</button>
+          {devMenu &&
             <div className='dev-menu__btns'>
               <button className='btn btn-secondary' onClick={addLastNote}>Добавить последнюю заметку</button>
               <button className='btn btn-secondary' onClick={addStaticNote}>Добавить тестовую заметку</button>
               <button className='btn btn-secondary' onClick={deleteNote}>Удалить последнюю заметку</button>
             </div>
-           }
-        </div>
+          }
         </div>
       </div>
-      )
-    }
-    
+    </div>
+  )
+}
+
 export default App;

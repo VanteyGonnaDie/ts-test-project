@@ -4,15 +4,15 @@ import { RootModel } from "."
 export const notesList = createModel<RootModel>()({
     state: ['Первая заметка'],
     reducers: {
-        addNote(state, payload){
-        return [...state, payload]
+        addNote(state, payload) {
+            return [...state, payload]
         },
-        deleteNote(state){
+        deleteNote(state) {
             state.pop()
             return [...state]
         }
     },
-},)
+})
 
 
 
