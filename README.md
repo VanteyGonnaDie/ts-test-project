@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Тестовое задание Дубинин Иван
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Стек: TypeScript, rematch, Bootstrap, Sass
 
-## Available Scripts
+Попробовать онлайн: https://codesandbox.io/s/peaceful-wave-ev2sps
 
-In the project directory, you can run:
+К заданию добавлена кнопка тестовой среды для отработки сценариев
+
+## Установка проекта
+
+Склонировав проект и открыв его в консоли:
+
+### `npm install`
+
+Устанавливает все необходимые для работы зависимости
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Запускает проект в режиме разработчика по адресу: [http://localhost:3000](http://localhost:3000)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Известные баги/проблемы
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Нажатия на комбинации клавиш не отрабатывают, если не кликнуть мышью в пределах div.container-fluid
+2. Если комбинацией ctrl+z удалить все заметки, а затем попытаться добавить через ctrl+y добавляются пустые заметки
+3. Комбинации отрабатывают костыльно, а не так как предполагается
+4. Использован sass вместо scss, так как sass лично удобнее, технологии минимально отличаются синтаксисом
+5. Bootstrap подключен через npm, а не cdn или файлами в проекте, поэтому реализация изменённого дизайна сделана через custom.sass
+6. Не созданны effects в моделях, так как нет необходимости отрабатывать асинхронные вызовы
+7. Не использован TypeScript в своих максимальных возможностях
+8. Номер заметки реализован через индекс, а не через state
+9. state содержит изначальное значение, так как без него возникают проблемы в отработке программы
