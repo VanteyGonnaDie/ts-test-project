@@ -15,7 +15,7 @@ const NoteList = () => {
         <p className='note-num'>№</p>
         <p className='note-text'>Заметка</p>
       </div>
-      {notes.map((text, index) =>
+      {notes.curr.map((text, index) =>
         <NoteItem key={index} text={text} number={index + 1} />
       )}
     </div>

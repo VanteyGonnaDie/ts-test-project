@@ -17,25 +17,25 @@ const App = () => {
 
   // Функции для тестирования
   const deleteNote = () => {
-    dispatch.notesList.deleteNote()
+    dispatch.notesList.undo()
   }
   const addStaticNote = () => {
     dispatch.notesList.addNote('Тестовая заметка')
   }
   const addLastNote = () => {
-    dispatch.notesList.addNote(notes[notes.length - 1])
+    dispatch.notesList.redo()
   }
 
   // Обработка нажатий на клавиатуре / Можно вынести отдельным компонентом
   const handleKeyEvent = (event: React.KeyboardEvent) => {
     if (event.ctrlKey && event.key == 'z') {
       event.preventDefault();
-      dispatch.notesList.deleteNote()
+      dispatch.notesList.undo()
       console.log(notes)
     }
     if (event.ctrlKey && event.key == 'y') {
       event.preventDefault();
-      dispatch.notesList.addNote(notes[notes.length - 1])
+      dispatch.notesList.redo()
       console.log('pressed ctrl+y')
       console.log(notes)
     }
