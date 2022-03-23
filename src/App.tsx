@@ -36,7 +36,6 @@ const App = () => {
     if (event.ctrlKey && event.key == 'y') {
       event.preventDefault();
       dispatch.notesList.redo()
-      console.log('pressed ctrl+y')
       console.log(notes)
     }
   }

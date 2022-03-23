@@ -3,34 +3,38 @@ import { RootModel } from "."
 
 type DEF_STATE = {
     curr: Array<string>
-    next?: string
-    prev?: string
+    next: Array<string>
+    prev: Array<string>
 }
 
 export const notesList = createModel<RootModel>()({
-    state:{
+    state: {
         curr: [],
-        next: '',
-        prev: '',
+        next: [],
+        prev: [],
     } as DEF_STATE,
     reducers: {
         addNote: (state, payload) => {
             state.curr.push(payload)
-            state.prev = payload
-            return {...state}
+            state.prev?.push(payload)
+            return { ...state }
         },
         undo: (state) => {
-            state.next = state.curr.pop()
-            state.prev = '' 
-            return {...state}
+            if (!state.prev) {
+                return { ...state }
+            }
+            state.next.push(state.curr.pop()!)
+            state.prev = [...state.curr]
+            return { ...state }
         },
         redo: (state) => {
-            if(!state.next){
+            if (state.next.length == 0) {
                 return state
             }
-            state.curr.push(state.next)
-            return {...state}
-
+            const temp_value = state.next.pop()!
+            state.curr.push(temp_value)
+            state.prev.push(temp_value)
+            return { ...state }
         }
     },
 })
