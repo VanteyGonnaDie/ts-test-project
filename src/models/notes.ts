@@ -17,6 +17,7 @@ export const notesList = createModel<RootModel>()({
         addNote: (state, payload) => {
             state.curr.push(payload)
             state.prev?.push(payload)
+            state.next = []
             return { ...state }
         },
         undo: (state) => {
